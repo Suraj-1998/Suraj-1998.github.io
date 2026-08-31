@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suraj Thirumalaimuthu — Data Analyst, Brisbane</title>
+<meta name="description" content="Data analyst in Brisbane. Three years at Amazon, Master of Information Technology (Data Science) from QUT. Selected work in analytics, modelling and geospatial measurement.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#111A2E;
+  --ink-soft:#3A4560;
+  --paper:#EEF0F3;
+  --paper-lift:#F7F8FA;
+  --rule:#C9CFD9;
+  --signal:#0B6E6E;
+  --fringe:#D8951C;
+  --max:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Source Sans 3",system-ui,sans-serif;font-size:17px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:"Bricolage Grotesque","Source Sans 3",sans-serif;font-weight:700;line-height:1.03;margin:0;letter-spacing:-.02em}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+
+/* ---- signature: interference fringe band ---- */
+.fringe{
+  height:10px;width:100%;
+  background:repeating-linear-gradient(90deg,
+    var(--ink) 0 2px, var(--signal) 2px 5px, var(--paper) 5px 9px,
+    var(--fringe) 9px 12px, var(--paper) 12px 18px);
+  opacity:.85;
+}
+.fringe--thin{height:4px;opacity:.5}
+
+/* ---- skip link ---- */
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--paper);padding:12px 18px;z-index:99}
+.skip:focus{left:0}
+
+/* ---- header ---- */
+header{border-bottom:1px solid var(--rule);position:sticky;top:0;background:rgba(238,240,243,.92);backdrop-filter:blur(6px);z-index:20}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:14px 0;flex-wrap:wrap}
+.mark{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:14px;flex-wrap:wrap}
+.nav a{text-decoration:none;padding:4px 0;border-bottom:2px solid transparent}
+.nav a:hover,.nav a:focus-visible{border-bottom-color:var(--signal)}
+
+/* ---- hero ---- */
+.hero{padding:92px 0 64px}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--signal);margin:0 0 22px}
+.hero h1{font-size:clamp(2.9rem,7.4vw,5.4rem);font-weight:800;max-width:15ch}
+.hero .lede{font-size:clamp(1.08rem,2vw,1.32rem);max-width:56ch;margin:28px 0 0;color:var(--ink-soft)}
+.hero .lede strong{color:var(--ink);font-weight:600}
+
+/* ---- readouts ---- */
+.readouts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin:52px 0 0}
+.readout{background:var(--paper-lift);padding:20px 18px}
+.readout .val{font-family:"Bricolage Grotesque",sans-serif;font-size:1.75rem;font-weight:700;display:block;line-height:1.1}
+.readout .key{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);display:block;margin-top:8px}
+
+/* ---- sections ---- */
+section{padding:78px 0}
+.sec-head{display:flex;align-items:baseline;gap:18px;margin:0 0 12px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(1.7rem,3.4vw,2.5rem)}
+.sec-num{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--signal);letter-spacing:.1em}
+.sec-intro{color:var(--ink-soft);max-width:62ch;margin:0 0 40px}
+
+/* ---- projects ---- */
+.project{border-top:1px solid var(--rule);padding:38px 0;display:grid;grid-template-columns:minmax(0,1fr);gap:22px}
+@media(min-width:860px){.project{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:56px}}
+.project:last-child{border-bottom:1px solid var(--rule)}
+.project h3{font-size:1.42rem;margin-bottom:6px}
+.ctx{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 16px}
+.project p{margin:0 0 14px}
+.role{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  border:1px solid var(--signal);color:var(--signal);padding:4px 9px;margin-bottom:16px}
+.findings{list-style:none;margin:0;padding:0;border-left:2px solid var(--fringe)}
+.findings li{padding:0 0 14px 18px;font-size:15.5px;color:var(--ink-soft)}
+.findings li:last-child{padding-bottom:0}
+.findings b{color:var(--ink);font-weight:600}
+.stack{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px}
+.stack span{font-family:"IBM Plex Mono",monospace;font-size:11.5px;background:var(--paper-lift);border:1px solid var(--rule);padding:4px 9px}
+
+/* ---- experience ---- */
+.role-block{border-top:1px solid var(--rule);padding:32px 0}
+.role-block:last-of-type{border-bottom:1px solid var(--rule)}
+.role-head{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:baseline}
+.role-head h3{font-size:1.28rem}
+.when{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft)}
+.role-block ul{margin:16px 0 0;padding-left:20px;color:var(--ink-soft)}
+.role-block li{margin-bottom:9px}
+
+/* ---- skills ---- */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.skillcol{background:var(--paper-lift);padding:24px 20px}
+.skillcol h3{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--signal);font-weight:500;margin-bottom:14px}
+.skillcol ul{list-style:none;margin:0;padding:0;font-size:15.5px;color:var(--ink-soft)}
+.skillcol li{padding:5px 0;border-bottom:1px dotted var(--rule)}
+.skillcol li:last-child{border-bottom:0}
+
+/* ---- contact ---- */
+.contact{background:var(--ink);color:var(--paper);padding:82px 0}
+.contact h2{color:var(--paper);font-size:clamp(1.9rem,4.4vw,3rem);max-width:18ch}
+.contact p{color:#B9C2D6;max-width:52ch;margin:22px 0 34px}
+.links{display:flex;flex-wrap:wrap;gap:14px}
+.links a{font-family:"IBM Plex Mono",monospace;font-size:14px;text-decoration:none;border:1px solid #55618A;padding:13px 20px;transition:background .18s,color .18s,border-color .18s}
+.links a:hover,.links a:focus-visible{background:var(--fringe);color:var(--ink);border-color:var(--fringe)}
+.avail{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--fringe);margin:0 0 20px}
+footer{background:var(--ink);color:#7C88A8;font-family:"IBM Plex Mono",monospace;font-size:11.5px;padding:0 0 40px}
+
+:focus-visible{outline:3px solid var(--fringe);outline-offset:3px}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+  <div class="wrap nav">
+    <span class="mark">Suraj Thirumalaimuthu — Brisbane</span>
+    <nav><ul>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul></nav>
+  </div>
+</header>
+<div class="fringe"></div>
+
+<main id="main">
+
+<div class="wrap hero">
+  <p class="eyebrow">Data Analyst · Brisbane, Australia</p>
+  <h1>I find the number that changes the decision.</h1>
+  <p class="lede">Three years at <strong>Amazon</strong> analysing customer data across five markets, and a <strong>Master of Information Technology (Data Science)</strong> from QUT. I work on the unglamorous half of analytics — the cleaning, the checking, and the part where you tell someone what to do about it.</p>
+
+  <div class="readouts">
+    <div class="readout"><span class="val">3 yrs</span><span class="key">Commercial data</span></div>
+    <div class="readout"><span class="val">5</span><span class="key">Markets analysed</span></div>
+    <div class="readout"><span class="val">Python · SQL · R</span><span class="key">Core tools</span></div>
+    <div class="readout"><span class="val">Power BI</span><span class="key">Reporting</span></div>
+  </div>
+</div>
+
+<div class="wrap">
+<section id="work">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Selected work</h2></div>
+  <p class="sec-intro">Four projects from my Master's at QUT. Each one is here for a decision I had to make, not just a tool I used.</p>
+
+  <article class="project">
+    <div>
+      <h3>CrowdCab</h3>
+      <p class="ctx">Industry project · Six-person team · Feb–Jun 2026</p>
+      <span class="role">Data analyst &amp; primary tester</span>
+      <p>A web application that recommends alternative rideshare pickup points to ease congestion after major events, built for an industry client across seven Brisbane venues in the lead-up to the 2032 Games.</p>
+      <p>I owned data preparation across three staged workstreams — cleaning booking and cab allocation data for the dashboards, cleaning the alternative pickup-point data, and enriching those points with spatial context. I also ran the client and internal meetings, and shaped the direction the build took.</p>
+      <div class="stack"><span>Python</span><span>pandas</span><span>Dashboards</span><span>OpenStreetMap</span><span>Agile</span></div>
+    </div>
+    <div>
+      <ul class="findings">
+        <li>As primary tester across two functional testing phases, I found a <b>session handling fault that exposed one customer's pickup record to another user</b>. A privacy defect, not a UI bug.</li>
+        <li>Logged defects with severity, reproduction steps, expected versus actual results and recommended fixes — so they could be acted on without me in the room.</li>
+        <li>Pushed for scope and data requirements to be settled with the client <b>before</b> development started, which kept the analytics from being rebuilt later.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="project">
+    <div>
+      <h3>Where to build a generation of fans</h3>
+      <p class="ctx">Data analytics · Australian Sports Commission scenario · 2025</p>
+      <span class="role">Sole author</span>
+      <p>Brisbane hosts the 2032 Games. The question was where a national sporting body should concentrate its effort to build youth engagement — and the honest answer turned out to be narrower than expected.</p>
+      <p>I analysed AusPlay national participation data across 142 sports, then collected around 400 news articles through the Guardian API to read what the media conversation was actually about.</p>
+      <div class="stack"><span>Python</span><span>scikit-learn</span><span>KMeans</span><span>TF-IDF</span><span>NMF</span><span>Plotly</span></div>
+      <p style="margin-top:16px"><a href="https://github.com/Suraj-1998/Brisbane-2032-Youth-Engagement-Strategies" target="_blank" rel="noopener" style="font-family:'IBM Plex Mono',monospace;font-size:13px;border-bottom:2px solid var(--fringe);text-decoration:none;padding-bottom:2px">View the code and analysis on GitHub &rarr;</a></p>
+    </div>
+    <div>
+      <ul class="findings">
+        <li><b>Roughly 84% of estimated youth participation sat inside the top 20 sports.</b> Spreading investment thinly across 142 would have been a mistake.</li>
+        <li>Ranking on raw participation favours whatever is already big, so I engineered measures for youth concentration, adolescent retention and gender balance — with a minimum participation threshold so small sports couldn't produce unstable ratios.</li>
+        <li>Clustering turned four separate rankings into <b>one segmentation a decision maker could act on</b>.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="project">
+    <div>
+      <h3>Measuring Brisbane moving, in millimetres</h3>
+      <p class="ctx">Research project · Sole-authored · 2025</p>
+      <span class="role">Sole author</span>
+      <p>Satellite radar can detect ground deformation beneath a city, but published studies often omit the processing settings that produced their results — which makes the results impossible to check. I built a workflow that doesn't have that problem.</p>
+      <p>An end-to-end pipeline in ESA SNAP converting Sentinel-1 radar imagery into geocoded coherence and displacement maps across three acquisition dates, using only open data and open software.</p>
+      <div class="stack"><span>ESA SNAP</span><span>Sentinel-1 InSAR</span><span>SRTM</span><span>Geocoding</span><span>Google Earth Pro</span></div>
+    </div>
+    <div>
+      <ul class="findings">
+        <li>Detected <b>millimetre-scale deformation</b> across the metropolitan area, with signal holding through the CBD and decorrelating measurably across vegetated outer suburbs.</li>
+        <li>Tested how much orbit precision, baseline length and elevation model choice actually changed the answer, rather than assuming.</li>
+        <li>Documented <b>every processing parameter</b> so the workflow can be re-run by someone else, and delivered outputs as map layers a planner can open without specialist software.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="project">
+    <div>
+      <h3>A model I deliberately made less accurate</h3>
+      <p class="ctx">Introduction to data science · Three-person team · 2025</p>
+      <span class="role">Data preparation &amp; evaluation</span>
+      <p>A classification model predicting COVID-19 positivity from a 37-variable health and behavioural survey. The interesting part wasn't the model — it was the two decisions that made it honest.</p>
+      <p>I led preprocessing: correcting data types, standardising inconsistent missing-value placeholders, and applying mode and median imputation so outliers didn't drag the fill values.</p>
+      <div class="stack"><span>Python</span><span>pandas</span><span>scikit-learn</span><span>seaborn</span></div>
+    </div>
+    <div>
+      <ul class="findings">
+        <li>One predictor correlated with the target at <b>0.92</b>. Leaving it in would have produced an excellent accuracy score and a useless model, so it came out of the feature set.</li>
+        <li>Comparing a decision tree against k-nearest neighbours, I chose <b>the model that generalised better rather than the one with the higher headline number</b>.</li>
+        <li>Kept some skewness on purpose — removing it would have cost more records than the modelling could spare.</li>
+      </ul>
+    </div>
+  </article>
+</section>
+
+<div class="fringe fringe--thin"></div>
+
+<section id="experience">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Experience</h2></div>
+
+  <div class="role-block">
+    <div class="role-head">
+      <h3>Machine Learning Data Associate · Amazon</h3>
+      <span class="when">Jul 2021 – Jun 2024 · Chennai</span>
+    </div>
+    <p style="margin:10px 0 0;color:var(--ink-soft)">Alexa Shopping Operations</p>
+    <ul>
+      <li>Analysed voice shopping interactions across the US, UK, Canadian, Indian and Australian markets, finding the root causes and behavioural patterns behind product and process decisions.</li>
+      <li>Built KPI and performance reporting in Power BI and Excel for the leadership team — which taught me that senior stakeholders want the finding and the recommended action, not the method.</li>
+      <li>Led a Lean Kaizen process improvement initiative across business-critical datasets, contributing to the team's Goal Success Rate.</li>
+      <li>Selected for a pilot team building algorithms to improve conversational understanding, owning testing and metric tracking for the trial.</li>
+    </ul>
+  </div>
+
+  <div class="role-block">
+    <div class="role-head">
+      <h3>Master of Information Technology (Data Science) · QUT</h3>
+      <span class="when">Graduated Jun 2026 · GPA 5.17 / 7.0</span>
+    </div>
+    <ul>
+      <li>Machine Learning at Scale · Machine Learning for Natural Language Processing · Trust and Artificial Intelligence · Databases · Introduction to Data Science · Cyber Security and Governance</li>
+    </ul>
+  </div>
+</section>
+
+<div class="fringe fringe--thin"></div>
+
+<section id="skills">
+  <div class="sec-head"><span class="sec-num">03</span><h2>What I work with</h2></div>
+  <p class="sec-intro">Listed at the level I'd be comfortable being tested on.</p>
+  <div class="skills">
+    <div class="skillcol">
+      <h3>Query &amp; analysis</h3>
+      <ul>
+        <li>SQL — joins, subqueries, aggregation, views</li>
+        <li>Python — pandas, NumPy, scikit-learn</li>
+        <li>R — tidyverse, ggplot2</li>
+        <li>Advanced Excel</li>
+      </ul>
+    </div>
+    <div class="skillcol">
+      <h3>Modelling</h3>
+      <ul>
+        <li>Classification &amp; clustering</li>
+        <li>Feature engineering</li>
+        <li>Model evaluation</li>
+        <li>Significance testing</li>
+        <li>Text analytics &amp; topic modelling</li>
+      </ul>
+    </div>
+    <div class="skillcol">
+      <h3>Reporting</h3>
+      <ul>
+        <li>Power BI</li>
+        <li>Tableau</li>
+        <li>Plotly, matplotlib, seaborn</li>
+        <li>KPI &amp; executive reporting</li>
+      </ul>
+    </div>
+    <div class="skillcol">
+      <h3>Working</h3>
+      <ul>
+        <li>Client &amp; stakeholder engagement</li>
+        <li>Agile delivery</li>
+        <li>Functional testing &amp; defect reporting</li>
+        <li>Data quality assurance</li>
+        <li>Technical writing</li>
+      </ul>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="contact" id="contact">
+  <div class="wrap">
+    <p class="avail">Open to data analyst roles · Full working rights in Australia</p>
+    <h2>If something here is close to a problem you have, get in touch.</h2>
+    <p>Brisbane based, available across Australia. Happy to talk through any of this work in more detail.</p>
+    <div class="links">
+      <a href="mailto:kevinsuraj16@gmail.com">kevinsuraj16@gmail.com</a>
+      <a href="tel:+61421493414">0421 493 414</a>
+      <a href="https://www.linkedin.com/in/suraj-thirumalaimuthu-b1a306114/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/Suraj-1998" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</div>
+<footer><div class="wrap">© 2026 Suraj Thirumalaimuthu · Built and hosted by hand</div></footer>
+
+</main>
+</body>
+</html>
