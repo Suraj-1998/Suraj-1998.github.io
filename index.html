@@ -1,338 +1,250 @@
-<!DOCTYPE html>
-<html lang="en-AU">
+<!doctype html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Suraj Thirumalaimuthu — Data Analyst, Brisbane</title>
-<meta name="description" content="Data analyst in Brisbane. Three years at Amazon, Master of Information Technology (Data Science) from QUT. Selected work in analytics, modelling and geospatial measurement.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://suraj-1998.github.io/">
-<meta property="og:title" content="Suraj Thirumalaimuthu — Data Analyst, Brisbane">
-<meta property="og:description" content="Three years at Amazon on the Rufus and Alexa AI assistants, and a Master of Information Technology (Data Science) from QUT. Selected work in analytics, modelling and geospatial measurement.">
-<meta property="og:site_name" content="Suraj Thirumalaimuthu">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Suraj Thirumalaimuthu — Data Analyst, Brisbane">
-<meta name="twitter:description" content="Three years at Amazon on the Rufus and Alexa AI assistants, and a Master of Information Technology (Data Science) from QUT.">
-<link rel="canonical" href="https://suraj-1998.github.io/">
+<meta name="description" content="Data analyst in Brisbane. Three years at Amazon building performance reporting across five markets. Power BI, SQL, Python.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#111A2E;
-  --ink-soft:#3A4560;
-  --paper:#EEF0F3;
-  --paper-lift:#F7F8FA;
-  --rule:#C9CFD9;
-  --signal:#0B6E6E;
-  --fringe:#D8951C;
+  --bg:#0E1116;
+  --surface:#161B22;
+  --surface-2:#1C222B;
+  --line:#242B35;
+  --text:#E9EDF2;
+  --text-2:#98A2B0;
+  --text-3:#6B7684;
+  --green:#00D47E;
+  --blue:#4CC9F0;
+  --amber:#F7B267;
+  --violet:#B084F5;
   --max:1120px;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}
-  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
 body{
-  margin:0;background:var(--paper);color:var(--ink);
-  font-family:"Source Sans 3",system-ui,sans-serif;font-size:17px;line-height:1.6;
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:"Space Grotesk",system-ui,-apple-system,sans-serif;
+  font-size:17px;line-height:1.6;font-weight:400;
   -webkit-font-smoothing:antialiased;
 }
-h1,h2,h3{font-family:"Bricolage Grotesque","Source Sans 3",sans-serif;font-weight:700;line-height:1.03;margin:0;letter-spacing:-.02em}
-a{color:inherit}
+a{color:var(--green);text-decoration:none}
+:focus-visible{outline:2px solid var(--green);outline-offset:3px;border-radius:3px}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
 
-/* ---- signature: interference fringe band ---- */
-.fringe{
-  height:10px;width:100%;
-  background:repeating-linear-gradient(90deg,
-    var(--ink) 0 2px, var(--signal) 2px 5px, var(--paper) 5px 9px,
-    var(--fringe) 9px 12px, var(--paper) 12px 18px);
-  opacity:.85;
+/* header */
+.top{
+  position:sticky;top:0;z-index:20;
+  background:rgba(14,17,22,.86);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
 }
-.fringe--thin{height:4px;opacity:.5}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:66px}
+.brand{font-weight:600;font-size:1.0625rem;letter-spacing:-.02em;color:var(--text)}
+.brand span{color:var(--text-3);font-weight:400}
+.top nav{display:flex;gap:28px;font-size:.9375rem}
+.top nav a{color:var(--text-2)}
+.top nav a:hover{color:var(--text)}
 
-/* ---- skip link ---- */
-.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--paper);padding:12px 18px;z-index:99}
-.skip:focus{left:0}
+/* hero */
+.hero{padding:104px 0 96px;text-align:center}
+h1{
+  font-size:clamp(2.3rem,5.4vw,4rem);line-height:1.05;letter-spacing:-.035em;
+  font-weight:700;margin:0 auto 26px;max-width:17ch;text-wrap:balance;
+}
+h1 em{font-style:normal;color:var(--green)}
+.hero p{margin:0 auto 18px;color:var(--text-2);max-width:60ch;font-size:1.0625rem}
+.hero p strong{color:var(--text);font-weight:500}
+.pill{
+  display:inline-block;margin-top:14px;padding:9px 18px;border-radius:999px;
+  border:1px solid rgba(0,212,126,.35);background:rgba(0,212,126,.08);
+  color:var(--green);font-size:.9375rem;font-weight:500;
+}
 
-/* ---- header ---- */
-header{border-bottom:1px solid var(--rule);position:sticky;top:0;background:rgba(238,240,243,.92);backdrop-filter:blur(6px);z-index:20}
-.nav{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:14px 0;flex-wrap:wrap}
-.mark{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
-.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:14px;flex-wrap:wrap}
-.nav a{text-decoration:none;padding:4px 0;border-bottom:2px solid transparent}
-.nav a:hover,.nav a:focus-visible{border-bottom-color:var(--signal)}
+/* section heads */
+section{padding:0 0 104px}
+.head{text-align:center;margin:0 0 48px}
+.head h2{font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.1;letter-spacing:-.03em;font-weight:700;margin:0}
+.head p{margin:12px auto 0;color:var(--text-3);max-width:52ch;font-size:.9375rem}
 
-/* ---- hero ---- */
-.hero{padding:92px 0 64px}
-.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--signal);margin:0 0 22px}
-.hero h1{font-size:clamp(2.9rem,7.4vw,5.4rem);font-weight:800;max-width:15ch}
-.hero .lede{font-size:clamp(1.08rem,2vw,1.32rem);max-width:56ch;margin:28px 0 0;color:var(--ink-soft)}
-.hero .lede strong{color:var(--ink);font-weight:600}
+/* featured */
+.feature{
+  border:1px solid var(--line);border-radius:14px;background:var(--surface);
+  padding:40px;display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:48px;align-items:start;
+}
+.tag{font-size:.8125rem;font-weight:600;letter-spacing:.02em;color:var(--green);margin:0 0 10px}
+.feature h3{font-size:1.75rem;line-height:1.15;letter-spacing:-.025em;font-weight:600;margin:0 0 16px}
+.feature p{margin:0 0 14px;color:var(--text-2);max-width:60ch}
+.stats{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.stat{background:var(--surface-2);padding:18px 20px}
+.stat b{display:block;font-size:1.75rem;line-height:1.1;font-weight:700;letter-spacing:-.03em;color:var(--green)}
+.stat span{display:block;margin-top:4px;font-size:.8125rem;color:var(--text-3)}
+.go{display:inline-block;margin-top:8px;font-weight:600;font-size:.9375rem;border-bottom:1px solid rgba(0,212,126,.4);padding-bottom:1px}
+.go:hover{border-bottom-color:var(--green)}
 
-/* ---- readouts ---- */
-.readouts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin:52px 0 0}
-.readout{background:var(--paper-lift);padding:20px 18px}
-.readout .val{font-family:"Bricolage Grotesque",sans-serif;font-size:1.75rem;font-weight:700;display:block;line-height:1.1}
-.readout .key{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);display:block;margin-top:8px}
+/* card grid */
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:22px}
+.card{
+  border:1px solid var(--line);border-radius:14px;background:var(--surface);
+  padding:30px 32px;display:flex;flex-direction:column;
+}
+.card .tag{color:var(--c,var(--green))}
+.card h3{font-size:1.1875rem;letter-spacing:-.02em;font-weight:600;margin:0 0 12px}
+.card p{margin:0 0 14px;color:var(--text-2);font-size:.9375rem}
+.card p:last-of-type{margin-bottom:18px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.chip{
+  font-size:.8125rem;font-weight:500;padding:5px 12px;border-radius:999px;
+  color:var(--c,var(--green));border:1px solid color-mix(in srgb, var(--c,var(--green)) 32%, transparent);
+  background:color-mix(in srgb, var(--c,var(--green)) 10%, transparent);
+}
+.c-blue{--c:var(--blue)} .c-amber{--c:var(--amber)} .c-violet{--c:var(--violet)}
 
-/* ---- sections ---- */
-section{padding:78px 0}
-.sec-head{display:flex;align-items:baseline;gap:18px;margin:0 0 12px;flex-wrap:wrap}
-.sec-head h2{font-size:clamp(1.7rem,3.4vw,2.5rem)}
-.sec-num{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--signal);letter-spacing:.1em}
-.sec-intro{color:var(--ink-soft);max-width:62ch;margin:0 0 40px}
+/* experience */
+.job{border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:36px 38px}
+.job-top{display:flex;flex-wrap:wrap;gap:10px 20px;align-items:baseline;justify-content:space-between;margin-bottom:16px}
+.job h3{font-size:1.3125rem;letter-spacing:-.02em;font-weight:600;margin:0}
+.job .years{color:var(--text-3);font-size:.9375rem;white-space:nowrap}
+.job p{margin:0 0 14px;color:var(--text-2);max-width:72ch}
+.job p:last-of-type{margin-bottom:0}
 
-/* ---- projects ---- */
-.project{border-top:1px solid var(--rule);padding:38px 0;display:grid;grid-template-columns:minmax(0,1fr);gap:22px}
-@media(min-width:860px){.project{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:56px}}
-.project:last-child{border-bottom:1px solid var(--rule)}
-.project h3{font-size:1.42rem;margin-bottom:6px}
-.ctx{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 16px}
-.project p{margin:0 0 14px}
-.role{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
-  border:1px solid var(--signal);color:var(--signal);padding:4px 9px;margin-bottom:16px}
-.findings{list-style:none;margin:0;padding:0;border-left:2px solid var(--fringe)}
-.findings li{padding:0 0 14px 18px;font-size:15.5px;color:var(--ink-soft)}
-.findings li:last-child{padding-bottom:0}
-.findings b{color:var(--ink);font-weight:600}
-.stack{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px}
-.stack span{font-family:"IBM Plex Mono",monospace;font-size:11.5px;background:var(--paper-lift);border:1px solid var(--rule);padding:4px 9px}
+.kit{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:22px}
+.kit div{background:var(--surface);padding:22px 24px}
+.kit h4{margin:0 0 8px;font-size:.875rem;font-weight:600;color:var(--green)}
+.kit p{margin:0;font-size:.9375rem;color:var(--text-2)}
 
-/* ---- experience ---- */
-.role-block{border-top:1px solid var(--rule);padding:32px 0}
-.role-block:last-of-type{border-bottom:1px solid var(--rule)}
-.role-head{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:baseline}
-.role-head h3{font-size:1.28rem}
-.when{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-soft)}
-.role-block ul{margin:16px 0 0;padding-left:20px;color:var(--ink-soft)}
-.role-block li{margin-bottom:9px}
+/* contact */
+.contact{text-align:center;padding-bottom:70px}
+.mail{
+  display:inline-block;margin:6px 0 26px;
+  font-size:clamp(1.25rem,2.6vw,1.75rem);font-weight:600;letter-spacing:-.02em;
+  border-bottom:1px solid rgba(0,212,126,.4);padding-bottom:3px;
+}
+.mail:hover{border-bottom-color:var(--green)}
+.links{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.links a{
+  border:1px solid var(--line);border-radius:999px;padding:9px 20px;
+  color:var(--text-2);font-size:.9375rem;font-weight:500;background:var(--surface);
+}
+.links a:hover{color:var(--text);border-color:#36404D}
+.rights{margin:30px auto 0;max-width:62ch;font-size:.9375rem;color:var(--text-3)}
 
-/* ---- skills ---- */
-.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
-.skillcol{background:var(--paper-lift);padding:24px 20px}
-.skillcol h3{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--signal);font-weight:500;margin-bottom:14px}
-.skillcol ul{list-style:none;margin:0;padding:0;font-size:15.5px;color:var(--ink-soft)}
-.skillcol li{padding:5px 0;border-bottom:1px dotted var(--rule)}
-.skillcol li:last-child{border-bottom:0}
+footer{border-top:1px solid var(--line);padding:26px 0 48px;text-align:center;font-size:.875rem;color:var(--text-3)}
 
-/* ---- contact ---- */
-.contact{background:var(--ink);color:var(--paper);padding:82px 0}
-.contact h2{color:var(--paper);font-size:clamp(1.9rem,4.4vw,3rem);max-width:18ch}
-.contact p{color:#B9C2D6;max-width:52ch;margin:22px 0 34px}
-.links{display:flex;flex-wrap:wrap;gap:14px}
-.links a{font-family:"IBM Plex Mono",monospace;font-size:14px;text-decoration:none;border:1px solid #55618A;padding:13px 20px;transition:background .18s,color .18s,border-color .18s}
-.links a:hover,.links a:focus-visible{background:var(--fringe);color:var(--ink);border-color:var(--fringe)}
-.avail{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--fringe);margin:0 0 20px}
-footer{background:var(--ink);color:#7C88A8;font-family:"IBM Plex Mono",monospace;font-size:11.5px;padding:0 0 40px}
-
-:focus-visible{outline:3px solid var(--fringe);outline-offset:3px}
+@media (max-width:860px){
+  .hero{padding:72px 0 64px}
+  .feature{grid-template-columns:1fr;gap:28px;padding:30px}
+  .grid{grid-template-columns:1fr}
+  .job{padding:28px 26px}
+  section{padding-bottom:76px}
+  .top nav{gap:18px;font-size:.875rem}
+}
 </style>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
 
-<header>
-  <div class="wrap nav">
-    <span class="mark">Suraj Thirumalaimuthu — Brisbane</span>
-    <nav><ul>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul></nav>
+<header class="top">
+  <div class="wrap">
+    <div class="brand">Suraj Thirumalaimuthu <span>· Brisbane</span></div>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </div>
 </header>
-<div class="fringe"></div>
-
-<main id="main">
-
-<div class="wrap hero">
-  <p class="eyebrow">Data Analyst · Brisbane, Australia</p>
-  <h1>I find the number that changes the decision.</h1>
-  <p class="lede">Three years at <strong>Amazon</strong> analysing customer data across five markets, and a <strong>Master of Information Technology (Data Science)</strong> from QUT. I work on the unglamorous half of analytics — the cleaning, the checking, and the part where you tell someone what to do about it.</p>
-
-  <div class="readouts">
-    <div class="readout"><span class="val">3 yrs</span><span class="key">Commercial data</span></div>
-    <div class="readout"><span class="val">5</span><span class="key">Markets analysed</span></div>
-    <div class="readout"><span class="val">Python · SQL</span><span class="key">Core tools</span></div>
-    <div class="readout"><span class="val">Power BI</span><span class="key">Reporting</span></div>
-  </div>
-</div>
 
 <div class="wrap">
-<section id="work">
-  <div class="sec-head"><span class="sec-num">01</span><h2>Selected work</h2></div>
-  <p class="sec-intro">Four projects from my Master's at QUT. Each one is here for a decision I had to make, not just a tool I used.</p>
 
-  <article class="project">
-    <div>
-      <h3>CrowdCab</h3>
-      <p class="ctx">Industry project · Six-person team · Feb–Jun 2026</p>
-      <span class="role">Data analyst &amp; primary tester</span>
-      <p>A web application that recommends alternative rideshare pickup points to ease congestion after major events, built for an industry client across seven Brisbane venues in the lead-up to the 2032 Games.</p>
-      <p>I owned data preparation across three staged workstreams — cleaning booking and cab allocation data for the dashboards, cleaning the alternative pickup-point data, and enriching those points with spatial context. I also ran the client and internal meetings, and shaped the direction the build took.</p>
-      <div class="stack"><span>Python</span><span>pandas</span><span>Dashboards</span><span>OpenStreetMap</span><span>Agile</span></div>
-    </div>
-    <div>
-      <ul class="findings">
-        <li>As primary tester across two functional testing phases, I found a <b>session handling fault that exposed one customer's pickup record to another user</b>. A privacy defect, not a UI bug.</li>
-        <li>Logged defects with severity, reproduction steps, expected versus actual results and recommended fixes — so they could be acted on without me in the room.</li>
-        <li>Pushed for scope and data requirements to be settled with the client <b>before</b> development started, which kept the analytics from being rebuilt later.</li>
-      </ul>
-    </div>
-  </article>
-
-  <article class="project">
-    <div>
-      <h3>Where to build a generation of fans</h3>
-      <p class="ctx">Data analytics · Australian Sports Commission scenario · 2025</p>
-      <span class="role">Sole author</span>
-      <p>Brisbane hosts the 2032 Games. The question was where a national sporting body should concentrate its effort to build youth engagement — and the honest answer turned out to be narrower than expected.</p>
-      <p>I analysed AusPlay national participation data across 142 sports, then collected around 400 news articles through the Guardian API to read what the media conversation was actually about.</p>
-      <div class="stack"><span>Python</span><span>scikit-learn</span><span>KMeans</span><span>TF-IDF</span><span>NMF</span><span>Plotly</span></div>
-      <p style="margin-top:16px"><a href="https://github.com/Suraj-1998/Brisbane-2032-Youth-Engagement-Strategies" target="_blank" rel="noopener" style="font-family:'IBM Plex Mono',monospace;font-size:13px;border-bottom:2px solid var(--fringe);text-decoration:none;padding-bottom:2px">View the code and analysis on GitHub &rarr;</a></p>
-    </div>
-    <div>
-      <ul class="findings">
-        <li><b>Roughly 84% of estimated youth participation sat inside the top 20 sports.</b> Spreading investment thinly across 142 would have been a mistake.</li>
-        <li>Ranking on raw participation favours whatever is already big, so I engineered measures for youth concentration, adolescent retention and gender balance — with a minimum participation threshold so small sports couldn't produce unstable ratios.</li>
-        <li>Clustering turned four separate rankings into <b>one segmentation a decision maker could act on</b>.</li>
-      </ul>
-    </div>
-  </article>
-
-  <article class="project">
-    <div>
-      <h3>Measuring Brisbane moving, in millimetres</h3>
-      <p class="ctx">Research project · Sole-authored · 2025</p>
-      <span class="role">Sole author</span>
-      <p>Satellite radar can detect ground deformation beneath a city, but published studies often omit the processing settings that produced their results — which makes the results impossible to check. I built a workflow that doesn't have that problem.</p>
-      <p>An end-to-end pipeline in ESA SNAP converting Sentinel-1 radar imagery into geocoded coherence and displacement maps across three acquisition dates, using only open data and open software.</p>
-      <div class="stack"><span>ESA SNAP</span><span>Sentinel-1 InSAR</span><span>SRTM</span><span>Geocoding</span><span>Google Earth Pro</span></div>
-    </div>
-    <div>
-      <ul class="findings">
-        <li>Detected <b>millimetre-scale deformation</b> across the metropolitan area, with signal holding through the CBD and decorrelating measurably across vegetated outer suburbs.</li>
-        <li>Tested how much orbit precision, baseline length and elevation model choice actually changed the answer, rather than assuming.</li>
-        <li>Documented <b>every processing parameter</b> so the workflow can be re-run by someone else, and delivered outputs as map layers a planner can open without specialist software.</li>
-      </ul>
-    </div>
-  </article>
-
-  <article class="project">
-    <div>
-      <h3>A model I deliberately made less accurate</h3>
-      <p class="ctx">Introduction to data science · Three-person team · 2025</p>
-      <span class="role">Data preparation &amp; evaluation</span>
-      <p>A classification model predicting COVID-19 positivity from a 37-variable health and behavioural survey. The interesting part wasn't the model — it was the two decisions that made it honest.</p>
-      <p>I led preprocessing: correcting data types, standardising inconsistent missing-value placeholders, and applying mode and median imputation so outliers didn't drag the fill values.</p>
-      <div class="stack"><span>Python</span><span>pandas</span><span>scikit-learn</span><span>seaborn</span></div>
-    </div>
-    <div>
-      <ul class="findings">
-        <li>One predictor correlated with the target at <b>0.92</b>. Leaving it in would have produced an excellent accuracy score and a useless model, so it came out of the feature set.</li>
-        <li>Comparing a decision tree against k-nearest neighbours, I chose <b>the model that generalised better rather than the one with the higher headline number</b>.</li>
-        <li>Kept some skewness on purpose — removing it would have cost more records than the modelling could spare.</li>
-      </ul>
-    </div>
-  </article>
-</section>
-
-<div class="fringe fringe--thin"></div>
-
-<section id="experience">
-  <div class="sec-head"><span class="sec-num">02</span><h2>Experience</h2></div>
-
-  <div class="role-block">
-    <div class="role-head">
-      <h3>Machine Learning Data Associate · Amazon</h3>
-      <span class="when">Jul 2021 – Jun 2024 · Chennai</span>
-    </div>
-    <p style="margin:10px 0 0;color:var(--ink-soft)">Alexa Shopping Operations</p>
-    <ul>
-      <li>Analysed voice shopping interactions across the US, UK, Canadian, Indian and Australian markets, finding the root causes and behavioural patterns behind product and process decisions.</li>
-      <li>Built KPI and performance reporting in Power BI and Excel for the leadership team — which taught me that senior stakeholders want the finding and the recommended action, not the method.</li>
-      <li>Led a Lean Kaizen process improvement initiative across business-critical datasets, contributing to the team's Goal Success Rate.</li>
-      <li>Selected for a pilot team building algorithms to improve conversational understanding, owning testing and metric tracking for the trial.</li>
-    </ul>
+  <div class="hero">
+    <h1>Check what the number is <em>actually</em> measuring.</h1>
+    <p>Three years at <strong>Amazon</strong> building performance reporting for an operations team across five markets, and a <strong>Master of Information Technology (Data Science)</strong> from QUT.</p>
+    <p>I work on the unglamorous half of analytics — the cleaning, the checking, and the part where you tell someone what to do about it.</p>
+    <p class="pill">Open to data analyst, business analyst and data science roles in Australia</p>
   </div>
 
-  <div class="role-block">
-    <div class="role-head">
-      <h3>Master of Information Technology (Data Science) · QUT</h3>
-      <span class="when">Graduated Jun 2026 · GPA 5.17 / 7.0</span>
+  <section id="work">
+    <div class="head">
+      <h2>Selected work</h2>
+      <p>Three projects where the interesting part was working out what the data was really telling me.</p>
     </div>
-    <ul>
-      <li>Machine Learning at Scale · Machine Learning for Natural Language Processing · Trust and Artificial Intelligence · Databases · Introduction to Data Science · Cyber Security and Governance</li>
-    </ul>
-  </div>
-</section>
 
-<div class="fringe fringe--thin"></div>
+    <div class="feature">
+      <div>
+        <p class="tag">Featured project</p>
+        <h3>ScoutMaster — a possession-adjusted scouting model</h3>
+        <p>Ranking footballers on per-90 numbers turned out to rank them by how much possession their team had. A midfielder at a weak side spends twice as long defending, so she logs twice as many interceptions without being any better at it.</p>
+        <p>The fix rescales volume metrics to a common baseline. Its strength was calibrated by measuring the leftover correlation rather than adjusted until the output looked plausible — which turned out to need different exponents for defending and attacking.</p>
+        <p>Built as a Python pipeline feeding a star schema in Power BI, with user-weighted scoring written in DAX.</p>
+        <a class="go" href="https://github.com/Suraj-1998/ScoutMaster">Read the methodology on GitHub</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>23,000</b><span>player-match records aggregated</span></div>
+        <div class="stat"><b>836</b><span>players ranked across five leagues</span></div>
+        <div class="stat"><b>27</b><span>metrics in seven weighted groups</span></div>
+      </div>
+    </div>
 
-<section id="skills">
-  <div class="sec-head"><span class="sec-num">03</span><h2>What I work with</h2></div>
-  <p class="sec-intro">Listed at the level I'd be comfortable being tested on.</p>
-  <div class="skills">
-    <div class="skillcol">
-      <h3>Query &amp; analysis</h3>
-      <ul>
-        <li>Python — pandas, NumPy, scikit-learn</li>
-        <li>SQL — joins, subqueries, aggregation, views</li>
-        <li>Advanced Excel</li>
-        <li>R — used for statistical analysis</li>
-      </ul>
-    </div>
-    <div class="skillcol">
-      <h3>Modelling</h3>
-      <ul>
-        <li>Classification &amp; clustering</li>
-        <li>Feature engineering</li>
-        <li>Model evaluation</li>
-        <li>Significance testing</li>
-        <li>Text analytics &amp; topic modelling</li>
-      </ul>
-    </div>
-    <div class="skillcol">
-      <h3>Reporting</h3>
-      <ul>
-        <li>Power BI</li>
-        <li>Amazon QuickSight</li>
-        <li>Tableau</li>
-        <li>Plotly, matplotlib, seaborn</li>
-        <li>KPI &amp; executive reporting</li>
-      </ul>
-    </div>
-    <div class="skillcol">
-      <h3>Working</h3>
-      <ul>
-        <li>Client &amp; stakeholder engagement</li>
-        <li>Agile delivery</li>
-        <li>Functional testing &amp; defect reporting</li>
-        <li>Data quality assurance</li>
-        <li>Technical writing</li>
-      </ul>
-    </div>
-  </div>
-</section>
-</div>
+    <div class="grid">
+      <div class="card c-blue">
+        <p class="tag">QUT industry project</p>
+        <h3>CrowdCab</h3>
+        <p>Data and quality assurance for a six-person team delivering to an external client — requirements sessions, datasets prepared in Python, and the reporting layer.</p>
+        <div class="chips"><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">Testing</span></div>
+      </div>
 
-<div class="contact" id="contact">
-  <div class="wrap">
-    <p class="avail">Open to data analyst roles · Full working rights in Australia</p>
-    <h2>If something here is close to a problem you have, get in touch.</h2>
-    <p>Brisbane based, available across Australia. Happy to talk through any of this work in more detail.</p>
+      <div class="card c-amber">
+        <p class="tag">Australian Sports Commission scenario</p>
+        <h3>Participation and media analysis</h3>
+        <p>142 participation categories set against topic modelling over roughly 400 news articles. 84% of participation sat inside the top 20, which turned a broad question into one segmentation and one investment recommendation.</p>
+        <div class="chips"><span class="chip">Python</span><span class="chip">R</span><span class="chip">Topic modelling</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="head">
+      <h2>Experience</h2>
+    </div>
+
+    <div class="job">
+      <div class="job-top">
+        <h3>Machine Learning Data Associate — Amazon</h3>
+        <div class="years">2021–2024 · Chennai</div>
+      </div>
+      <p>Built the performance reporting an operations leadership team ran on across five international markets — business performance, productivity and daily volumes — in Power BI, QuickSight and Excel.</p>
+      <p>Those five markets each defined performance slightly differently, so the same question returned different answers depending on who asked. Agreeing the definitions and documenting them was most of the job, and the reason the reporting became something people trusted.</p>
+      <p>Also helped design and deploy the workflow used to evaluate an AI shopping assistant's responses, and led a Lean Kaizen initiative that contributed to a 14% improvement in data accuracy over twelve months.</p>
+    </div>
+
+    <div class="kit">
+      <div><h4>Reporting and BI</h4><p>Power BI — semantic modelling, DAX, Power Query. Amazon QuickSight, Tableau, advanced Excel.</p></div>
+      <div><h4>Querying and code</h4><p>SQL, MySQL. Python — pandas, NumPy, scikit-learn. R.</p></div>
+      <div><h4>Modelling</h4><p>Star schema and dimensional design, normalisation to 3NF, data dictionaries.</p></div>
+      <div><h4>Ways of working</h4><p>Lean and Kaizen, Agile, stakeholder engagement across regions.</p></div>
+      <div><h4>Education</h4><p>Master of Information Technology (Data Science), QUT Brisbane. Microsoft PL-300 in progress.</p></div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="head">
+      <h2>Let's talk</h2>
+      <p>Looking for a team where the analysis changes what gets decided, not just what gets reported.</p>
+    </div>
+    <a class="mail" href="mailto:kevinsuraj16@gmail.com">kevinsuraj16@gmail.com</a>
     <div class="links">
-      <a href="mailto:kevinsuraj16@gmail.com">kevinsuraj16@gmail.com</a>
-      <a href="tel:+61421493414">0421 493 414</a>
-      <a href="https://www.linkedin.com/in/suraj-thirumalaimuthu-b1a306114/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/Suraj-1998" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/suraj-thirumalaimuthu-b1a306114">LinkedIn</a>
+      <a href="https://github.com/Suraj-1998">GitHub</a>
     </div>
-  </div>
-</div>
-<footer><div class="wrap">© 2026 Suraj Thirumalaimuthu · Built and hosted by hand</div></footer>
+    <p class="rights">Brisbane based, on a Temporary Graduate visa (subclass 485) with unrestricted full-time working rights in Australia until August 2029. No sponsorship required.</p>
+  </section>
 
-</main>
+</div>
+
+<footer>© 2026 Suraj Thirumalaimuthu</footer>
+
 </body>
 </html>
